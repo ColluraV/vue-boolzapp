@@ -1,8 +1,65 @@
 *{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 
     min-height: 20px;
     border: 1px dashed red;
+    min-width: 30px;
+}
+
+body{
+    max-height: 100vh;
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+    height: 80%;
+}
+
+#app{
+    height: 100vh;
+    width: 100%;
+}
+
+#container-utenti-dx{
+    height: 100%;
+    padding: 0;
+}
+
+#container-utenti-sx{
+    height: 100%;
+    padding: 0;
+}
+
+.icona-rounded-sx{
+    width: 25px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    line-height: 25px;
+    margin: auto 0.5rem;
+}
+
+.news{
+    background-color: #8EDAFC;
+}
+
+.sx-fs{
+    font-size: 0.78em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.overflow{
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.shrinkOff{
+    flex-shrink: 0;
+}
+.contatto{
+    height: 60px;
 }
