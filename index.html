@@ -28,7 +28,7 @@
                 
                 <div class="user-container d-flex justify-content-between align-items-center shrinkOff"><!--//////// utente  /////////// -->
                     <div class="just-sx d-flex align-items-center">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
+                        <img class="icona-rounded-sx" src="imgs/avatar_io.jpg" alt="">
                         <span  class="sx-fs"> Utente </span>
                     </div>
 
@@ -61,22 +61,38 @@
 
                 <!--///////////////////////////////////////////////// lista contatti overflow //////////////////////////////////////////////////// -->
                 <div class="d-flex flex-column overflow">
+                
+                   
+                    <!--//////// singolo contatto /////////// -->
+                    <div class="contatto d-flex shrinkOff w-100"
+                         v-for="(arrEl,i) in contatti"
+                         v-bind:id="(activeIndex === i ? 'active' : '')"
+                         @click = "activeClick(i)">
+                        
+                        <img class="icona-rounded-sx" 
+                        v-bind:src="`imgs/avatar${arrEl.avatar}.jpg`">
 
-                    <div class="contatto d-flex shrinkOff w-100"><!--//////// singolo contatto /////////// -->
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
                         <div class="d-flex justify-content-between w-100">
                             <div class="d-flex flex-column">
-                                <span class="sx-fs d-flex"> Utente </span>
-                                <span class="s-size-grey"> Ultimo messaggio inviato</span>
+                                <span class="sx-fs d-flex">{{arrEl.name}}</span>
+                                <span class="s-size-grey"><!--{{arrEl.messages[messages.length - 1].message}}--></span>
+                                
+                                
+                                <!--///////////  HELP ME FLORIAN  //////////// -->
+                                <!--//////////  HELP ME FLORIAN  /////////// -->
+                                <!--/////////  HELP ME FLORIAN  ////////// -->
+                                <!--////////  HELP ME FLORIAN  ///////// -->
+                                <!--///////  HELP ME FLORIAN  //////// -->
+
+
+
+
                             </div>
-                            <div class="s-size-grey"> 01/01/1234 10:10</div>
+                            <div class="s-size-grey">01/01/1234 10:10</div>
                         </div>
-                    </div><!--//////// singolo contatto /////////// -->
+                    </div>
 
                     
-
-                    
-
                 </div> <!--//////// lista contatti overflow /////////// -->
 
             </div>
