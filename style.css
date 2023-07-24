@@ -97,6 +97,7 @@ body{
     height:  var(--altezza-top);
     margin-bottom: 2px;
     background-color: whitesmoke;
+    padding: 0 10px;
 }
 .user-container{
     height:  var(--altezza-top);
