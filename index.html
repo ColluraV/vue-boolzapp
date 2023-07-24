@@ -16,137 +16,141 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="row">
+    <div id="app" class="d-flex align-items-center">
+
+        <div class="container">
+
+          <div class="row">
+
                 <!--/////////////////////////////// container sx  ////////////////////////////////// -->
 
             <div id="container-utenti-sx" class="col-5 d-flex flex-column shrinkOff">
                 
-                <div id="user-container" class=" d-flex justify-content-between align-items-center shrinkOff"><!--//////// utente  /////////// -->
+                <div class="user-container d-flex justify-content-between align-items-center shrinkOff"><!--//////// utente  /////////// -->
                     <div class="just-sx d-flex align-items-center">
                         <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
+                        <span  class="sx-fs"> Utente </span>
                     </div>
 
                     <div class="just-dx text-center">
-                        <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
-                        <a href="#"><i class="fa-solid fa-message"></i></a>
-                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        <a href="#"><i class="fa-solid fa-circle-notch text-secondary"></i></a>
+                        <a href="#"><i class="fa-solid fa-message text-secondary"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
                     </div>
                 </div>
 
                 <div class="news d-flex shrinkOff"> <!--//////// news e aggiornamenti /////////// -->
                     
-                    <div  class="d-flex flex-column justify-content-center"><i class="fa-solid fa-bell-slash icona-rounded-sx text-center"></i></div>
+                    <div class="d-flex justify-content-center">
+                        <i class="fa-solid fa-bell-slash icona-rounded-sx text-center"></i>
+                    </div>
                     
-                    <div>
+                    <div class="d-flex flex-column ju">
                         <p class="sx-fs">Ricevi notifiche di nuovi messaggi </p>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <a href="#" class="s-size-grey">Attiva notifiche desktop</a>
                     </div>
 
                 </div>
 
                 <div class="search-bar d-flex shrinkOff"> <!--//////// barra di ricerca /////////// -->
                     <span class="d-flex align-items-center">
-                        <i class="fa-solid fa-magnifying-glass icona-rounded-sx text-center "></i>
+                        <i class="fa-solid fa-magnifying-glass text-center alig"></i>
                     </span>
-                    <input class="form-control" type="text" placeholder="Cerca" aria-label="default input example">
+                    <input class="form-control border-0" type="text" placeholder="Cerca" >
                 </div>
 
-                <div class="d-flex flex-column overflow"><!--//////// lista contatti overflow /////////// -->
+                <!--///////////////////////////////////////////////// lista contatti overflow //////////////////////////////////////////////////// -->
+                <div class="d-flex flex-column overflow">
 
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
+                    <div class="contatto d-flex shrinkOff w-100"><!--//////// singolo contatto /////////// -->
+                                                <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
+                        <div class="d-flex justify-content-between w-100">
+                            <div class="d-flex flex-column">
+                                <span class="sx-fs d-flex"> Utente </span>
+                                <span class="s-size-grey"> Ultimo messaggio inviato</span>
+                            </div>
+                            <div class="s-size-grey"> 01/01/1234 10:10</div>
+                        </div>
+                    </div><!--//////// singolo contatto /////////// -->
 
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
+                    
 
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                    <div class="contatto just-sx d-flex align-items-center shrinkOff">
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
-                        <span> Utente </span>
-                    </div>
-
-                </div>
+                </div> <!--//////// lista contatti overflow /////////// -->
 
             </div>
             
-            
-            <div id="container-utenti-dx" class="col-7 d-flex flex-column"></div>
+            <!--//////////////////////////////////////////////////////// messaggi dei contatti /////////////////////////////////////////////////////////// -->
+            <div id="container-utenti-dx" class="col-7 d-flex flex-column">
+
+
+                <div class="user-container d-flex justify-content-between align-items-center shrinkOff"><!--//////// contatto utente  /////////// -->
+                    
+                    <div class="just-sx d-flex align-items-center"><!--//// dati contatto //// -->
+                        
+                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
+                        
+                        <div class="d-flex flex-column">
+                            <span class="sx-fs d-flex"> Utente </span>
+                            <span class="s-size-grey"> Ultimo accesso 10:15</span>
+                        </div>
+
+                    </div>
+
+                    <div class="just-dx text-center">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass text-secondary  text-secondary"></i></a>
+                        <a href="#"><i class="fa-solid fa-paperclip text-secondary"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
+                    </div>
+                </div>
+
+                <div style="background-image: url(imgs/mine.jpg);" class="d-flex flex-column overflow py-4 px-5"><!--//////// messaggi overflow /////////// -->
+                   
+                    <div class="msg shrinkOff in-uscita">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div>  
+
+                    <div class="msg shrinkOff in-arrivo">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div> 
+
+                    <div class="msg shrinkOff in-uscita">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div>
+                    
+                    <div class="msg shrinkOff in-arrivo">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div> 
+
+                    <div class="msg shrinkOff in-uscita">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div>
+                    
+                    <div class="msg shrinkOff in-arrivo">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div> 
+
+                    <div class="msg shrinkOff in-uscita">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div>
+                    
+                    <div class="msg shrinkOff in-arrivo">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    </div> 
+
+                </div> <!--//////// messaggi overflow /////////// -->
+
+                <div class="text-area shrinkOff d-flex align-items-center">
+                    <div class="d-flex text-center mx-3 "><i class="fa-regular fa-face-smile text-secondary"></i></div>
+                    <input class="form-control h-75" type="text" placeholder="Scrivi il tuo messaggio" >
+                    <div class="d-flex text-center mx-3 "><i class="fa-solid fa-microphone text-secondary"></i></div>
+                </div>
+            </div>
+        
+        
+        </div>          
         </div>
+
+
     </div>
 
 
