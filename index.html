@@ -75,18 +75,8 @@
                         <div class="d-flex justify-content-between w-100">
                             <div class="d-flex flex-column">
                                 <span class="sx-fs d-flex">{{arrEl.name}}</span>
-                                <span class="s-size-grey"><!--{{arrEl.messages[messages.length - 1].message}}--></span>
-                                
-                                
-                                <!--///////////  HELP ME FLORIAN  //////////// -->
-                                <!--//////////  HELP ME FLORIAN  /////////// -->
-                                <!--/////////  HELP ME FLORIAN  ////////// -->
-                                <!--////////  HELP ME FLORIAN  ///////// -->
-                                <!--///////  HELP ME FLORIAN  //////// -->
-
-
-
-
+                                <span class="s-size-grey">{{arrEl.messages[arrEl.messages.length - 1].message}}</span>
+  
                             </div>
                             <div class="s-size-grey">01/01/1234 10:10</div>
                         </div>
@@ -105,11 +95,12 @@
                     
                     <div class="just-sx d-flex align-items-center"><!--//// dati contatto //// -->
                         
-                        <img class="icona-rounded-sx" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png" alt="">
+                        <img class="icona-rounded-sx"
+                            v-bind:src='"imgs/avatar" + contatti[activeIndex].avatar + ".jpg"' >
                         
                         <div class="d-flex flex-column">
-                            <span class="sx-fs d-flex"> Utente </span>
-                            <span class="s-size-grey"> Ultimo accesso 10:15</span>
+                            <span class="sx-fs d-flex"> {{contatti[activeIndex].name}} </span>
+                            <span class="s-size-grey"> Ultimo accesso {{contatti[activeIndex].messages[messages.length-1].date}}</span>
                         </div>
 
                     </div>
@@ -123,37 +114,13 @@
 
                 <div style="background-image: url(imgs/mine.jpg);" class="d-flex flex-column overflow py-4 px-5"><!--//////// messaggi overflow /////////// -->
                    
-                    <div class="msg shrinkOff in-uscita">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
+                    <div class="msg shrinkOff"
+                        v-for="(arrEl) in contatti[activeIndex].messages"
+                        v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
+                        {{arrEl.message}}                        
                     </div>  
 
-                    <div class="msg shrinkOff in-arrivo">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div> 
-
-                    <div class="msg shrinkOff in-uscita">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div>
                     
-                    <div class="msg shrinkOff in-arrivo">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div> 
-
-                    <div class="msg shrinkOff in-uscita">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div>
-                    
-                    <div class="msg shrinkOff in-arrivo">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div> 
-
-                    <div class="msg shrinkOff in-uscita">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div>
-                    
-                    <div class="msg shrinkOff in-arrivo">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum obcaecati ad accusamus, tempore earum sunt, nostrum culpa iste voluptates a officiis voluptatum veritatis cumque numquam sapiente quae odio dicta atque.                        
-                    </div> 
 
                 </div> <!--//////// messaggi overflow /////////// -->
 
