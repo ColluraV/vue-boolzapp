@@ -1,138 +1,158 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoolzappVjs</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app" class="d-flex align-items-center">
 
         <div class="container">
 
-          <div class="row">
+            <div class="row">
 
                 <!--/////////////////////////////// container sx  ////////////////////////////////// -->
 
-            <div id="container-utenti-sx" class="col-5 d-flex flex-column shrinkOff">
-                
-                <div class="user-container d-flex justify-content-between align-items-center shrinkOff"><!--//////// utente  /////////// -->
-                    <div class="just-sx d-flex align-items-center">
-                        <img class="icona-rounded-sx" src="imgs/avatar_io.jpg" alt="">
-                        <span  class="sx-fs"> Utente </span>
+                <div id="container-utenti-sx" class="col-5 d-flex flex-column shrinkOff">
+
+                    <div class="user-container d-flex justify-content-between align-items-center shrinkOff">
+                        <!--//////// utente  /////////// -->
+                        <div class="just-sx d-flex align-items-center">
+                            <img class="icona-rounded-sx" src="imgs/avatar_io.jpg" alt="">
+                            <span class="sx-fs"> Utente </span>
+                        </div>
+
+                        <div class="just-dx text-center">
+                            <a href="#"><i class="fa-solid fa-circle-notch text-secondary"></i></a>
+                            <a href="#"><i class="fa-solid fa-message text-secondary"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
+                        </div>
                     </div>
 
-                    <div class="just-dx text-center">
-                        <a href="#"><i class="fa-solid fa-circle-notch text-secondary"></i></a>
-                        <a href="#"><i class="fa-solid fa-message text-secondary"></i></a>
-                        <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
-                    </div>
-                </div>
+                    <div class="news d-flex shrinkOff"> <!--//////// news e aggiornamenti /////////// -->
 
-                <div class="news d-flex shrinkOff"> <!--//////// news e aggiornamenti /////////// -->
-                    
-                    <div class="d-flex justify-content-center">
-                        <i class="fa-solid fa-bell-slash icona-rounded-sx text-center"></i>
-                    </div>
-                    
-                    <div class="d-flex flex-column ju">
-                        <p class="sx-fs">Ricevi notifiche di nuovi messaggi </p>
-                        <a href="#" class="s-size-grey">Attiva notifiche desktop</a>
+                        <div class="d-flex justify-content-center">
+                            <i class="fa-solid fa-bell-slash icona-rounded-sx text-center"></i>
+                        </div>
+
+                        <div class="d-flex flex-column ju">
+                            <p class="sx-fs">Ricevi notifiche di nuovi messaggi </p>
+                            <a href="#" class="s-size-grey">Attiva notifiche desktop</a>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="search-bar d-flex shrinkOff"> <!--//////// barra di ricerca /////////// -->
+                        <span class="d-flex align-items-center">
+                            <i class="fa-solid fa-magnifying-glass text-center alig"></i>
+                        </span>
+                        <input class="form-control border-0" type="text" placeholder="Cerca">
+                    </div>
 
-                <div class="search-bar d-flex shrinkOff"> <!--//////// barra di ricerca /////////// -->
-                    <span class="d-flex align-items-center">
-                        <i class="fa-solid fa-magnifying-glass text-center alig"></i>
-                    </span>
-                    <input class="form-control border-0" type="text" placeholder="Cerca" >
-                </div>
+                    <!--///////////////////////////////////////////////// lista contatti overflow //////////////////////////////////////////////////// -->
+                    <div class="d-flex flex-column overflow">
 
-                <!--///////////////////////////////////////////////// lista contatti overflow //////////////////////////////////////////////////// -->
-                <div class="d-flex flex-column overflow">
-                
-                   
-                    <!--//////// singolo contatto /////////// -->
-                    <div class="contatto d-flex shrinkOff w-100"
-                         v-for="(arrEl,i) in contatti"
-                         v-bind:id="(activeIndex === i ? 'active' : '')"
-                         @click = "activeClick(i)">
-                        
-                        <img class="icona-rounded-sx" 
-                        v-bind:src="`imgs/avatar${arrEl.avatar}.jpg`">
 
-                        <div class="d-flex justify-content-between w-100">
-                            <div class="d-flex flex-column">
-                                <span class="sx-fs d-flex">{{arrEl.name}}</span>
-                                <span class="s-size-grey">{{arrEl.messages[arrEl.messages.length - 1].message}}</span>
-  
+                        <!--//////// singolo contatto /////////// -->
+                        <div class="contatto d-flex shrinkOff w-100" v-for="(arrEl,i) in contatti"
+                            v-bind:id="(activeIndex === i ? 'active' : '')" @click="activeClick(i)">
+
+                            <img class="icona-rounded-sx" v-bind:src="`imgs/avatar${arrEl.avatar}.jpg`">
+
+                            <div class="d-flex justify-content-between w-100">
+                                <div class="d-flex flex-column">
+                                    <span class="sx-fs d-flex">{{arrEl.name}}</span>
+                                    <span class="s-size-grey">{{arrEl.messages[arrEl.messages.length -
+                                        1].message}}</span>
+
+                                </div>
+                                <div class="s-size-grey">01/01/1234 10:10</div>
                             </div>
-                            <div class="s-size-grey">01/01/1234 10:10</div>
+                        </div>
+
+
+                    </div> <!--//////// lista contatti overflow /////////// -->
+
+                </div>
+
+                <!--//////////////////////////////////////////////////////// messaggi dei contatti /////////////////////////////////////////////////////////// -->
+                <div id="container-utenti-dx" class="col-7 d-flex flex-column">
+
+
+                    <div class="user-container d-flex justify-content-between align-items-center shrinkOff">
+                        <!--//////// contatto utente  /////////// -->
+
+                        <div class="just-sx d-flex align-items-center"><!--//// dati contatto //// -->
+
+                            <img class="icona-rounded-sx"
+                                v-bind:src='"imgs/avatar" + contatti[activeIndex].avatar + ".jpg"'>
+
+                            <div class="d-flex flex-column">
+                                <span class="sx-fs d-flex"> {{contatti[activeIndex].name}} </span>
+                                <span class="s-size-grey"> Ultimo accesso
+                                    {{contatti[activeIndex].messages[contatti[activeIndex].messages.length-1].date}}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="just-dx text-center">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass text-secondary  text-secondary"></i></a>
+                            <a href="#"><i class="fa-solid fa-paperclip text-secondary"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
                         </div>
                     </div>
 
-                    
-                </div> <!--//////// lista contatti overflow /////////// -->
-
-            </div>
-            
-            <!--//////////////////////////////////////////////////////// messaggi dei contatti /////////////////////////////////////////////////////////// -->
-            <div id="container-utenti-dx" class="col-7 d-flex flex-column">
-
-
-                <div class="user-container d-flex justify-content-between align-items-center shrinkOff"><!--//////// contatto utente  /////////// -->
-                    
-                    <div class="just-sx d-flex align-items-center"><!--//// dati contatto //// -->
+                    <div style="background-image: url(imgs/mine.jpg);" class="d-flex flex-column overflow py-4 px-5">
                         
-                        <img class="icona-rounded-sx"
-                            v-bind:src='"imgs/avatar" + contatti[activeIndex].avatar + ".jpg"' >
                         
-                        <div class="d-flex flex-column">
-                            <span class="sx-fs d-flex"> {{contatti[activeIndex].name}} </span>
-                            <span class="s-size-grey"> Ultimo accesso {{contatti[activeIndex].messages[messages.length-1].date}}</span>
+                        <!--//////// messaggi overflow /////////// -->
+
+                        <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl) in contatti[activeIndex].messages"
+                            v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
+                           <span>{{arrEl.message}}</span> 
+                        
+
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                              
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </div>
+</div>
+
+                    </div> <!--//////// messaggi overflow /////////// -->
+
+
+                    <div class="text-area shrinkOff d-flex align-items-center">
+                        <div class="d-flex text-center mx-3 "><i class="fa-regular fa-face-smile text-secondary"></i>
                         </div>
-
-                    </div>
-
-                    <div class="just-dx text-center">
-                        <a href="#"><i class="fa-solid fa-magnifying-glass text-secondary  text-secondary"></i></a>
-                        <a href="#"><i class="fa-solid fa-paperclip text-secondary"></i></a>
-                        <a href="#"><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></a>
+                        <input class="form-control h-75" type="text" placeholder="Scrivi il tuo messaggio"
+                            v-model="messaggiNuovi.message" @keyup.enter="enterClick(activeIndex)">
+                        <div class="d-flex text-center mx-3 "><i class="fa-solid fa-microphone text-secondary"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div style="background-image: url(imgs/mine.jpg);" class="d-flex flex-column overflow py-4 px-5"><!--//////// messaggi overflow /////////// -->
-                   
-                    <div class="msg shrinkOff"
-                        v-for="(arrEl) in contatti[activeIndex].messages"
-                        v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
-                        {{arrEl.message}}                        
-                    </div>  
 
-                    
-
-                </div> <!--//////// messaggi overflow /////////// -->
-
-                <div class="text-area shrinkOff d-flex align-items-center">
-                    <div class="d-flex text-center mx-3 "><i class="fa-regular fa-face-smile text-secondary"></i></div>
-                    <input class="form-control h-75" type="text" placeholder="Scrivi il tuo messaggio" >
-                    <div class="d-flex text-center mx-3 "><i class="fa-solid fa-microphone text-secondary"></i></div>
-                </div>
             </div>
-        
-        
-        </div>          
         </div>
 
 
@@ -140,10 +160,10 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
-
-
-

@@ -162,6 +162,12 @@ Vue.createApp({
       ],
 
       activeIndex: "0",
+      messaggio:"",
+      messaggiNuovi:{
+          date:"",
+          message:"",
+          status:"",
+      },
 
     }
   },
@@ -169,7 +175,30 @@ Vue.createApp({
 
     activeClick(contactIndex){
       this.activeIndex=contactIndex;
-    }
+    },
+
+//messaggio personalizzato
+    enterClick(i){
+      const messagesClone = {...this.messaggiNuovi};
+      messagesClone.status="sent";
+      this.contatti[i].messages.push(messagesClone);
+      this.messaggiNuovi.message="";
+      setTimeout(this.risposta,1000);
+    },
+
+//risposta
+    risposta(){
+      const messagesClone = {...this.messaggiNuovi};
+      messagesClone.message= "ok";
+      messagesClone.status="received";
+      messagesClone.date="di recente";
+
+      this.contatti[this.activeIndex].messages.push(messagesClone);
+    },
+
+    removeTask(i) {
+      this.contatti[activeIndex].splice(i, 1)
+    },
 
   }
 
