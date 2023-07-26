@@ -139,12 +139,12 @@
 
                     </div> <!--//////// messaggi in overflow /////////// -->
 
-
+<!--////////////////////////////////////////////////////// input testo //////////////////////////////////////////////////////// -->
                     <div class="text-area shrinkOff d-flex align-items-center">
                         <div class="d-flex text-center mx-3 "><i class="fa-regular fa-face-smile text-secondary"></i>
                         </div>
                         <input class="form-control h-75" type="text" placeholder="Scrivi il tuo messaggio"
-                            v-model="messaggiNuovi.message" @keyup.enter="enterClick()">
+                            v-model="messaggiNuovi.message" @keyup.enter="enterClick(activeIndex)">
                         <div class="d-flex text-center mx-3 "><i class="fa-solid fa-microphone text-secondary"></i>
                         </div>
                     </div>

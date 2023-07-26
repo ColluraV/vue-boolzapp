@@ -174,8 +174,8 @@ Vue.createApp({
   },
   methods:{
 
-    activeClick(contactIndex){
-      this.activeIndex=contactIndex;
+    activeClick(i){
+      this.activeIndex=i;
     },
 
 //messaggio personalizzato
