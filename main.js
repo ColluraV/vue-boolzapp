@@ -162,7 +162,7 @@ Vue.createApp({
         }
       ],
 
-      activeIndex: "0",
+      activeIndex: 0,
       messaggio:"",
       messaggiNuovi:{
           date:"",
@@ -193,12 +193,12 @@ Vue.createApp({
       messagesClone.message= "ok";
       messagesClone.status="received";
       messagesClone.date="di recente";
-
       this.filteredList[this.activeIndex].messages.push(messagesClone);
     },
 
-    removeMessage() {
-      this.filteredList[this.activeIndex].messages.message.splice(i, 1)
+//rimozione messaggio
+    removeMessage(i) {
+      this.contatti[this.activeIndex].messages.splice(i, 1);
     },
 
   },

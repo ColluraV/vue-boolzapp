@@ -102,7 +102,7 @@
 
                             <div class="d-flex flex-column">
                                 <span class="sx-fs d-flex"> {{filteredList[activeIndex].name}} </span>
-                                <span class="s-size-grey"> Ultimo accesso
+                                <span class="s-size-grey"> Ultimo accesso  
                                     {{filteredList[activeIndex].messages[filteredList[activeIndex].messages.length-1].date}}</span>
                             </div>
 
@@ -120,7 +120,7 @@
                         
                         <!--//////// messaggi in overflow /////////// -->
 
-                        <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl) in filteredList[activeIndex].messages"
+                        <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl,i) in filteredList[activeIndex].messages"
                             v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
                            <span>{{arrEl.message}}</span> 
                         
@@ -131,8 +131,8 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark">
                               
-                              <li @click="removeMessage(i)"><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              <li><a class="dropdown-item"  @click="removeMessage(i)" href="#">Rimuovi messaggio</a></li>
+                              <li><a class="dropdown-item" href="#">Visualizza informazioni</a></li>
                             </ul>
                           </div>
 </div>
