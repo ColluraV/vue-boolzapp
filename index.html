@@ -60,7 +60,7 @@
                         <span class="d-flex align-items-center">
                             <i class="fa-solid fa-magnifying-glass text-center alig"></i>
                         </span>
-                        <input class="form-control border-0" type="text" placeholder="Cerca">
+                        <input class="form-control border-0" type="text" placeholder="Cerca"  v-model="search">
                     </div>
 
                     <!--///////////////////////////////////////////////// lista contatti overflow //////////////////////////////////////////////////// -->
@@ -68,7 +68,7 @@
 
 
                         <!--//////// singolo contatto /////////// -->
-                        <div class="contatto d-flex shrinkOff w-100" v-for="(arrEl,i) in contatti"
+                        <div class="contatto d-flex shrinkOff w-100" v-for="(arrEl,i) in filteredList"
                             v-bind:id="(activeIndex === i ? 'active' : '')" @click="activeClick(i)">
 
                             <img class="icona-rounded-sx" v-bind:src="`imgs/avatar${arrEl.avatar}.jpg`">
@@ -119,7 +119,7 @@
                     <div style="background-image: url(imgs/mine.jpg);" class="d-flex flex-column overflow py-4 px-5">
                         
                         
-                        <!--//////// messaggi overflow /////////// -->
+                        <!--//////// messaggi in overflow /////////// -->
 
                         <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl) in contatti[activeIndex].messages"
                             v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
@@ -138,7 +138,7 @@
                           </div>
 </div>
 
-                    </div> <!--//////// messaggi overflow /////////// -->
+                    </div> <!--//////// messaggi in overflow /////////// -->
 
 
                     <div class="text-area shrinkOff d-flex align-items-center">

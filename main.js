@@ -5,6 +5,7 @@ Vue.createApp({
   data() {
     return {
 
+      search: '',
       contatti: [
         {
           name: "Michele",
@@ -200,6 +201,13 @@ Vue.createApp({
       this.contatti[activeIndex].splice(i, 1)
     },
 
+  },
+    computed: {
+    filteredList() {
+      return this.contatti.filter(contattiFiltrati => {
+        return contattiFiltrati.name.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
   }
 
 
