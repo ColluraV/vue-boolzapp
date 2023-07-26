@@ -182,7 +182,7 @@ Vue.createApp({
     enterClick(i){
       const messagesClone = {...this.messaggiNuovi};
       messagesClone.status="sent";
-      this.contatti[i].messages.push(messagesClone);
+      this.filteredList[i].messages.push(messagesClone);
       this.messaggiNuovi.message="";
       setTimeout(this.risposta,1000);
     },
@@ -194,11 +194,11 @@ Vue.createApp({
       messagesClone.status="received";
       messagesClone.date="di recente";
 
-      this.contatti[this.activeIndex].messages.push(messagesClone);
+      this.filteredList[this.activeIndex].messages.push(messagesClone);
     },
 
-    removeTask(i) {
-      this.contatti[activeIndex].splice(i, 1)
+    removeMessage() {
+      this.filteredList[this.activeIndex].messages.message.splice(i, 1)
     },
 
   },

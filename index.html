@@ -76,11 +76,10 @@
                             <div class="d-flex justify-content-between w-100">
                                 <div class="d-flex flex-column">
                                     <span class="sx-fs d-flex">{{arrEl.name}}</span>
-                                    <span class="s-size-grey">{{arrEl.messages[arrEl.messages.length -
-                                        1].message}}</span>
+                                    <span class="s-size-grey">{{arrEl.messages[arrEl.messages.length - 1].message}}</span>
 
                                 </div>
-                                <div class="s-size-grey">01/01/1234 10:10</div>
+                                <div class="s-size-grey">{{arrEl.messages[arrEl.messages.length - 1].date}}</div>
                             </div>
                         </div>
 
@@ -99,12 +98,12 @@
                         <div class="just-sx d-flex align-items-center"><!--//// dati contatto //// -->
 
                             <img class="icona-rounded-sx"
-                                v-bind:src='"imgs/avatar" + contatti[activeIndex].avatar + ".jpg"'>
+                                v-bind:src='"imgs/avatar" + filteredList[activeIndex].avatar + ".jpg"'>
 
                             <div class="d-flex flex-column">
-                                <span class="sx-fs d-flex"> {{contatti[activeIndex].name}} </span>
+                                <span class="sx-fs d-flex"> {{filteredList[activeIndex].name}} </span>
                                 <span class="s-size-grey"> Ultimo accesso
-                                    {{contatti[activeIndex].messages[contatti[activeIndex].messages.length-1].date}}</span>
+                                    {{filteredList[activeIndex].messages[filteredList[activeIndex].messages.length-1].date}}</span>
                             </div>
 
                         </div>
@@ -121,7 +120,7 @@
                         
                         <!--//////// messaggi in overflow /////////// -->
 
-                        <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl) in contatti[activeIndex].messages"
+                        <div class="msg my-1 shrinkOff d-flex justify-content-between" v-for="(arrEl) in filteredList[activeIndex].messages"
                             v-bind:class="(arrEl.status === 'sent' ? 'in-uscita' : 'in-arrivo')">
                            <span>{{arrEl.message}}</span> 
                         
@@ -132,7 +131,7 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark">
                               
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li @click="removeMessage(i)"><a class="dropdown-item" href="#">Another action</a></li>
                               <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                           </div>
@@ -145,7 +144,7 @@
                         <div class="d-flex text-center mx-3 "><i class="fa-regular fa-face-smile text-secondary"></i>
                         </div>
                         <input class="form-control h-75" type="text" placeholder="Scrivi il tuo messaggio"
-                            v-model="messaggiNuovi.message" @keyup.enter="enterClick(activeIndex)">
+                            v-model="messaggiNuovi.message" @keyup.enter="enterClick()">
                         <div class="d-flex text-center mx-3 "><i class="fa-solid fa-microphone text-secondary"></i>
                         </div>
                     </div>
